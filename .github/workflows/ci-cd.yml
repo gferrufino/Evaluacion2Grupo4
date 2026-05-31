@@ -25,11 +25,13 @@ jobs:
           pip install -r requirements.txt
 
       - name: Ejecutar PyTest
+        env:
+          PYTHONPATH: .
         run: |
           pytest app/test_main.py -v
 
   security-scan:
-    name: Análisis de Seguridad Snyk (IE3)
+    name: Analisis de Seguridad Snyk (IE3)
     needs: unit-tests
     runs-on: ubuntu-latest
     steps:
@@ -44,7 +46,7 @@ jobs:
           args: --severity-threshold=high
 
   deploy-simulated:
-    name: Construcción y Despliegue Simulado (IE4)
+    name: Construccion y Despliegue Simulado (IE4)
     needs: security-scan
     runs-on: ubuntu-latest
     steps:
