@@ -1,0 +1,7 @@
+# Snyk (https://snyk.io) policy file, alternatives or more info at https://docs.snyk.io/snyk-cli/cli-reference/the-.snyk-file
+version: v1.25.0
+ignore:
+  SNYK-PYTHON-STARLETTE-13733964:
+    - '*':
+        reason: 'Conflicto de dependencias insalvable: FastAPI requiere starlette < 0.46.0'
+        expires: 2026-06-30T00:00:00.000Z
